@@ -52,4 +52,8 @@ export class AddEmpComponent {
      })
     }
   }
+  resetForm(){
+    this.empform.reset();
+  }
+
 }
