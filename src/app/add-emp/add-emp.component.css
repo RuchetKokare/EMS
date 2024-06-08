@@ -1,0 +1,22 @@
+
+
+
+   .content {
+    padding-top: 10px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    gap: 10px;
+  }
+  
+  .row mat-form-field {
+    flex: 1; /* Ensures each form field takes up equal space */
+    min-width: 200px; /* Optional: set a minimum width for better responsiveness */
+  }
+
+  .action{
+    padding: 0px 25px 20px ;
+    button{flex: 1;}
+  }
