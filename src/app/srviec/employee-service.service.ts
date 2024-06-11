@@ -10,12 +10,9 @@ export class EmployeeServiceService
 
 
 
-  private apiUrl = 'http://localhost:3000/Employee/';
 
+  constructor(){
 
-  constructor(private http: HttpClient) {}
-
-  addEmployee(data: any): Observable<any> {
-    return this.http.post(this.apiUrl, data);
   }
+
 }

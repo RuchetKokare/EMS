@@ -37,20 +37,12 @@ export class AddEmpComponent {
   ];
 
   onFormSubmit() {
-    if (this.empform.valid) {
-     this.employeService.addEmployee(this.empform.value).subscribe({
-
-      next:(val:any)=>{
-        alert("EMployee added successfully.....")
-        this.diglogref.close();
-      },
-      error: (err: any)=>
+   
+    if(this.empform.valid)
       {
-          console.log(err);
-          console.log("Error Occured whild adding data into database ");
+        console.log( this.empform.value );
       }
-     })
-    }
+
   }
   resetForm(){
     this.empform.reset();
