@@ -5,14 +5,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class EmployeeServiceService 
+export class EmployeeServiceService {
+  constructor(private http: HttpClient ) {}  
+
+addEmployee(data: any):Observable<any>
 {
+ return this.http.post('localhost:3000/employee', data);
+}
 
-
-
-
-  constructor(){
-
-  }
 
 }

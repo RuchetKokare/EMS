@@ -13,8 +13,11 @@ import { DialogRef } from '@angular/cdk/dialog';
 export class AddEmpComponent {
   empform: FormGroup;
 
-  constructor(private fb: FormBuilder ,private  employeService: EmployeeServiceService  , private diglogref: DialogRef<AddEmpComponent>  ) 
-  {
+  constructor(
+    private fb: FormBuilder,
+    private employeService: EmployeeServiceService,
+    private diglogref: DialogRef<AddEmpComponent>,
+  ) {
     this.empform = fb.group({
       firstName: '',
       lastName: '',
@@ -37,15 +40,19 @@ export class AddEmpComponent {
   ];
 
   onFormSubmit() {
-   
-    if(this.empform.valid)
-      {
-        console.log( this.empform.value );
-      }
-
+    if (this.empform.valid) {
+      this.employeService.addEmployee(this.empform.value).subscribe({
+        next: (val: any) => {
+          alert('added successfully ');
+          this.diglogref.close();
+        },
+        error: (err: any) => {
+          console.log('Something went wrong ....', err);
+        },
+      });
+    }
   }
-  resetForm(){
+  resetForm() {
     this.empform.reset();
   }
-
 }
